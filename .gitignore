@@ -1,0 +1,22 @@
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
+#java specific
+*.class
+
+#netbeans ignore personal stuff 
+nbproject/private/
+
+#xcode specific
+build/*
+*.pbxuser
+*~.nib
+#ignore private workspace stuff added by Xcode4
+xcuserdata
+project.xcworkspace
+
+

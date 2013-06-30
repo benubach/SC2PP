@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		173D3E821780346800F64BF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 173D3E811780346800F64BF9 /* UIKit.framework */; };
+		173D3E841780346800F64BF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 173D3E831780346800F64BF9 /* Foundation.framework */; };
+		173D3E861780346800F64BF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 173D3E851780346800F64BF9 /* CoreGraphics.framework */; };
+		173D3E8C1780346800F64BF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 173D3E8A1780346800F64BF9 /* InfoPlist.strings */; };
+		173D3E8E1780346800F64BF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 173D3E8D1780346800F64BF9 /* main.m */; };
+		173D3E941780346800F64BF9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 173D3E931780346800F64BF9 /* Default.png */; };
+		173D3E961780346800F64BF9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 173D3E951780346800F64BF9 /* Default@2x.png */; };
+		173D3E981780346800F64BF9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 173D3E971780346800F64BF9 /* Default-568h@2x.png */; };
+		173D3EA01780346800F64BF9 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 173D3E9F1780346800F64BF9 /* SenTestingKit.framework */; };
+		173D3EA11780346800F64BF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 173D3E811780346800F64BF9 /* UIKit.framework */; };
+		173D3EA21780346800F64BF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 173D3E831780346800F64BF9 /* Foundation.framework */; };
+		173D3EAA1780346800F64BF9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 173D3EA81780346800F64BF9 /* InfoPlist.strings */; };
+		173D3EB9178034D100F64BF9 /* libKiwi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 173D3EB6178034D100F64BF9 /* libKiwi.a */; };
+		173D3EBA178034D100F64BF9 /* libPublicAutomation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 173D3EB7178034D100F64BF9 /* libPublicAutomation.a */; };
+		173D3EBB178034D100F64BF9 /* libShelley.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 173D3EB8178034D100F64BF9 /* libShelley.a */; };
+		173D3EBD178034D700F64BF9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 173D3EBC178034D700F64BF9 /* QuartzCore.framework */; };
+		173D3EBF1780350A00F64BF9 /* SignupSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 173D3EBE1780350A00F64BF9 /* SignupSpec.m */; };
+		173D3EC21780399300F64BF9 /* FakeSelectorEngineRegistry.m in Sources */ = {isa = PBXBuildFile; fileRef = 173D3EC11780399300F64BF9 /* FakeSelectorEngineRegistry.m */; };
+		173D3EC3178039CD00F64BF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 173D3E851780346800F64BF9 /* CoreGraphics.framework */; };
+		173D3EC717803A7900F64BF9 /* SC2PPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 173D3EC617803A7900F64BF9 /* SC2PPAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		173D3EA31780346800F64BF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 173D3E761780346800F64BF9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 173D3E7D1780346800F64BF9;
+			remoteInfo = SC2PP;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		173D3E7E1780346800F64BF9 /* SC2PP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SC2PP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		173D3E811780346800F64BF9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		173D3E831780346800F64BF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		173D3E851780346800F64BF9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		173D3E891780346800F64BF9 /* SC2PP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SC2PP-Info.plist"; sourceTree = "<group>"; };
+		173D3E8B1780346800F64BF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		173D3E8D1780346800F64BF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		173D3E8F1780346800F64BF9 /* SC2PP-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SC2PP-Prefix.pch"; sourceTree = "<group>"; };
+		173D3E931780346800F64BF9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		173D3E951780346800F64BF9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		173D3E971780346800F64BF9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		173D3E9E1780346800F64BF9 /* SC2PPTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SC2PPTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		173D3E9F1780346800F64BF9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		173D3EA71780346800F64BF9 /* SC2PPTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SC2PPTests-Info.plist"; sourceTree = "<group>"; };
+		173D3EA91780346800F64BF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		173D3EB6178034D100F64BF9 /* libKiwi.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libKiwi.a; path = "../Frameworks/Kiwi/build/Release-iphoneos/libKiwi.a"; sourceTree = "<group>"; };
+		173D3EB7178034D100F64BF9 /* libPublicAutomation.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPublicAutomation.a; path = "../Frameworks/PublicAutomation/build/Release-iphoneos/libPublicAutomation.a"; sourceTree = "<group>"; };
+		173D3EB8178034D100F64BF9 /* libShelley.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libShelley.a; path = "../Frameworks/Shelley/build/Release-iphoneos/libShelley.a"; sourceTree = "<group>"; };
+		173D3EBC178034D700F64BF9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		173D3EBE1780350A00F64BF9 /* SignupSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupSpec.m; sourceTree = "<group>"; };
+		173D3EC11780399300F64BF9 /* FakeSelectorEngineRegistry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeSelectorEngineRegistry.m; sourceTree = "<group>"; };
+		173D3EC517803A7900F64BF9 /* SC2PPAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SC2PPAppDelegate.h; path = Classes/SC2PPAppDelegate.h; sourceTree = "<group>"; };
+		173D3EC617803A7900F64BF9 /* SC2PPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SC2PPAppDelegate.m; path = Classes/SC2PPAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		173D3E7B1780346800F64BF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				173D3E821780346800F64BF9 /* UIKit.framework in Frameworks */,
+				173D3E841780346800F64BF9 /* Foundation.framework in Frameworks */,
+				173D3E861780346800F64BF9 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		173D3E9A1780346800F64BF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				173D3EC3178039CD00F64BF9 /* CoreGraphics.framework in Frameworks */,
+				173D3EA11780346800F64BF9 /* UIKit.framework in Frameworks */,
+				173D3EBD178034D700F64BF9 /* QuartzCore.framework in Frameworks */,
+				173D3EB9178034D100F64BF9 /* libKiwi.a in Frameworks */,
+				173D3EBA178034D100F64BF9 /* libPublicAutomation.a in Frameworks */,
+				173D3EBB178034D100F64BF9 /* libShelley.a in Frameworks */,
+				173D3EA01780346800F64BF9 /* SenTestingKit.framework in Frameworks */,
+				173D3EA21780346800F64BF9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		173D3E751780346800F64BF9 = {
+			isa = PBXGroup;
+			children = (
+				173D3E871780346800F64BF9 /* SC2PP */,
+				173D3EA51780346800F64BF9 /* SC2PPTests */,
+				173D3E801780346800F64BF9 /* Frameworks */,
+				173D3E7F1780346800F64BF9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		173D3E7F1780346800F64BF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				173D3E7E1780346800F64BF9 /* SC2PP.app */,
+				173D3E9E1780346800F64BF9 /* SC2PPTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		173D3E801780346800F64BF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				173D3EB6178034D100F64BF9 /* libKiwi.a */,
+				173D3EB7178034D100F64BF9 /* libPublicAutomation.a */,
+				173D3EB8178034D100F64BF9 /* libShelley.a */,
+				173D3EBC178034D700F64BF9 /* QuartzCore.framework */,
+				173D3E811780346800F64BF9 /* UIKit.framework */,
+				173D3E831780346800F64BF9 /* Foundation.framework */,
+				173D3E851780346800F64BF9 /* CoreGraphics.framework */,
+				173D3E9F1780346800F64BF9 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		173D3E871780346800F64BF9 /* SC2PP */ = {
+			isa = PBXGroup;
+			children = (
+				173D3EC417803A5400F64BF9 /* Classes */,
+				173D3E881780346800F64BF9 /* Supporting Files */,
+			);
+			path = SC2PP;
+			sourceTree = "<group>";
+		};
+		173D3E881780346800F64BF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				173D3E891780346800F64BF9 /* SC2PP-Info.plist */,
+				173D3E8A1780346800F64BF9 /* InfoPlist.strings */,
+				173D3E8D1780346800F64BF9 /* main.m */,
+				173D3E8F1780346800F64BF9 /* SC2PP-Prefix.pch */,
+				173D3E931780346800F64BF9 /* Default.png */,
+				173D3E951780346800F64BF9 /* Default@2x.png */,
+				173D3E971780346800F64BF9 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		173D3EA51780346800F64BF9 /* SC2PPTests */ = {
+			isa = PBXGroup;
+			children = (
+				173D3EC01780399300F64BF9 /* Support */,
+				173D3EA61780346800F64BF9 /* Supporting Files */,
+				173D3EBE1780350A00F64BF9 /* SignupSpec.m */,
+			);
+			path = SC2PPTests;
+			sourceTree = "<group>";
+		};
+		173D3EA61780346800F64BF9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				173D3EA71780346800F64BF9 /* SC2PPTests-Info.plist */,
+				173D3EA81780346800F64BF9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		173D3EC01780399300F64BF9 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				173D3EC11780399300F64BF9 /* FakeSelectorEngineRegistry.m */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		173D3EC417803A5400F64BF9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				173D3EC517803A7900F64BF9 /* SC2PPAppDelegate.h */,
+				173D3EC617803A7900F64BF9 /* SC2PPAppDelegate.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		173D3E7D1780346800F64BF9 /* SC2PP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 173D3EB01780346800F64BF9 /* Build configuration list for PBXNativeTarget "SC2PP" */;
+			buildPhases = (
+				173D3E7A1780346800F64BF9 /* Sources */,
+				173D3E7B1780346800F64BF9 /* Frameworks */,
+				173D3E7C1780346800F64BF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SC2PP;
+			productName = SC2PP;
+			productReference = 173D3E7E1780346800F64BF9 /* SC2PP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		173D3E9D1780346800F64BF9 /* SC2PPTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 173D3EB31780346800F64BF9 /* Build configuration list for PBXNativeTarget "SC2PPTests" */;
+			buildPhases = (
+				173D3E991780346800F64BF9 /* Sources */,
+				173D3E9A1780346800F64BF9 /* Frameworks */,
+				173D3E9B1780346800F64BF9 /* Resources */,
+				173D3E9C1780346800F64BF9 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				173D3EA41780346800F64BF9 /* PBXTargetDependency */,
+			);
+			name = SC2PPTests;
+			productName = SC2PPTests;
+			productReference = 173D3E9E1780346800F64BF9 /* SC2PPTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		173D3E761780346800F64BF9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SC2PP;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Benjamín Ubach Nieto";
+			};
+			buildConfigurationList = 173D3E791780346800F64BF9 /* Build configuration list for PBXProject "SC2PP" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 173D3E751780346800F64BF9;
+			productRefGroup = 173D3E7F1780346800F64BF9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				173D3E7D1780346800F64BF9 /* SC2PP */,
+				173D3E9D1780346800F64BF9 /* SC2PPTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		173D3E7C1780346800F64BF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				173D3E8C1780346800F64BF9 /* InfoPlist.strings in Resources */,
+				173D3E941780346800F64BF9 /* Default.png in Resources */,
+				173D3E961780346800F64BF9 /* Default@2x.png in Resources */,
+				173D3E981780346800F64BF9 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		173D3E9B1780346800F64BF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				173D3EAA1780346800F64BF9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		173D3E9C1780346800F64BF9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		173D3E7A1780346800F64BF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				173D3E8E1780346800F64BF9 /* main.m in Sources */,
+				173D3EC717803A7900F64BF9 /* SC2PPAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		173D3E991780346800F64BF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				173D3EBF1780350A00F64BF9 /* SignupSpec.m in Sources */,
+				173D3EC21780399300F64BF9 /* FakeSelectorEngineRegistry.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		173D3EA41780346800F64BF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 173D3E7D1780346800F64BF9 /* SC2PP */;
+			targetProxy = 173D3EA31780346800F64BF9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		173D3E8A1780346800F64BF9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				173D3E8B1780346800F64BF9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		173D3EA81780346800F64BF9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				173D3EA91780346800F64BF9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		173D3EAE1780346800F64BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		173D3EAF1780346800F64BF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		173D3EB11780346800F64BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SC2PP/SC2PP-Prefix.pch";
+				INFOPLIST_FILE = "SC2PP/SC2PP-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		173D3EB21780346800F64BF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SC2PP/SC2PP-Prefix.pch";
+				INFOPLIST_FILE = "SC2PP/SC2PP-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		173D3EB41780346800F64BF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SC2PP.app/SC2PP";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SC2PP/SC2PP-Prefix.pch";
+				INFOPLIST_FILE = "SC2PPTests/SC2PPTests-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/../Frameworks/Kiwi/Classes/\"/** \"$(SOURCE_ROOT)/../Frameworks/PublicAutomation/PublicAutomation/\"/** \"$(SOURCE_ROOT)/../Frameworks/Shelley/Source/\"/**";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		173D3EB51780346800F64BF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SC2PP.app/SC2PP";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SC2PP/SC2PP-Prefix.pch";
+				INFOPLIST_FILE = "SC2PPTests/SC2PPTests-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/../Frameworks/Kiwi/Classes/\"/** \"$(SOURCE_ROOT)/../Frameworks/PublicAutomation/PublicAutomation/\"/** \"$(SOURCE_ROOT)/../Frameworks/Shelley/Source/\"/**";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		173D3E791780346800F64BF9 /* Build configuration list for PBXProject "SC2PP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				173D3EAE1780346800F64BF9 /* Debug */,
+				173D3EAF1780346800F64BF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		173D3EB01780346800F64BF9 /* Build configuration list for PBXNativeTarget "SC2PP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				173D3EB11780346800F64BF9 /* Debug */,
+				173D3EB21780346800F64BF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		173D3EB31780346800F64BF9 /* Build configuration list for PBXNativeTarget "SC2PPTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				173D3EB41780346800F64BF9 /* Debug */,
+				173D3EB51780346800F64BF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 173D3E761780346800F64BF9 /* Project object */;
+}
