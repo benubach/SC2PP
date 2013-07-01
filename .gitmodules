@@ -1,9 +1,12 @@
 [submodule "FrontEnd/iOS/Frameworks/PublicAutomation"]
 	path = FrontEnd/iOS/Frameworks/PublicAutomation
 	url = git@github.com:TestingWithFrank/PublicAutomation.git
+	branch = master
 [submodule "FrontEnd/iOS/Frameworks/Shelley"]
 	path = FrontEnd/iOS/Frameworks/Shelley
 	url = git@github.com:TestingWithFrank/Shelley.git
+	branch = master
 [submodule "FrontEnd/iOS/Frameworks/Kiwi"]
 	path = FrontEnd/iOS/Frameworks/Kiwi
 	url = git@github.com:allending/Kiwi.git
+	branch = master
