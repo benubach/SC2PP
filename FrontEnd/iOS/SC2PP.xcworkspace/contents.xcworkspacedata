@@ -13,4 +13,7 @@
    <FileRef
       location = "group:Frameworks/PublicAutomation/PublicAutomation.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Frameworks/OHHTTPStubs/OHHTTPStubs/OHHTTPStubs.xcodeproj">
+   </FileRef>
 </Workspace>

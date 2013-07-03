@@ -10,3 +10,11 @@
 	path = FrontEnd/iOS/Frameworks/Kiwi
 	url = git@github.com:allending/Kiwi.git
 	branch = master
+[submodule "FrontEnd/iOS/Frameworks/OHHTTPStubs"]
+	path = FrontEnd/iOS/Frameworks/OHHTTPStubs
+	url = git@github.com:AliSoftware/OHHTTPStubs.git
+	branch = master
+[submodule "FrontEnd/iOS/Frameworks/AFNetworking"]
+	path = FrontEnd/iOS/Frameworks/AFNetworking
+	url = git@github.com:AFNetworking/AFNetworking.git
+	branch = master
