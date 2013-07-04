@@ -8,6 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+#define SC2PPSignupValidationDomain @"SC2PPSignupValidationDomain"
+NS_OPTIONS(NSUInteger, SC2PPSignupValidationError){
+    SC2PPSignupValidationEmailIsNull,
+    SC2PPSignupValidationEmailIsEmpty,
+    SC2PPSignupValidationEmailIsInvalid,
+    SC2PPSignupValidationPasswordIsNull,
+    SC2PPSignupValidationPasswordIsEmpty,
+    SC2PPSignupValidationPasswordIsTooShort,
+    SC2PPSignupValidationProfileURLIsNull,
+    SC2PPSignupValidationProfileURLIsEmpty
+};
+
 @class SC2PPSignupInteractor;
 
 @protocol SC2PPSignupInteractorDelegate <NSObject>
@@ -25,6 +37,6 @@
 
 @property (nonatomic, weak) id<SC2PPSignupInteractorDelegate>delegate;
 
--(void)requestSignupForEmail:(NSString*)email password:(NSString*)password battleNetURL:(NSString*)profileURL;
+-(BOOL)requestSignupForEmail:(NSString*)email password:(NSString*)password battleNetURL:(NSString*)profileURL error:(NSError *__autoreleasing *)error;
 
 @end
