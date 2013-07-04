@@ -37,6 +37,8 @@
 
 -(BOOL)validateEmail:(NSString*)email password:(NSString *)password battleNetURL:(NSString *)profileURL error:(NSError *__autoreleasing *)error
 {
+    static NSString *emailFormat = @"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$";
+
     if(!email){
         if(error)
             *error = [[NSError alloc] initWithDomain:SC2PPSignupValidationDomain code:SC2PPSignupValidationEmailIsNull userInfo:nil];
@@ -45,7 +47,12 @@
         if(error)
             *error = [[NSError alloc] initWithDomain:SC2PPSignupValidationDomain code:SC2PPSignupValidationEmailIsEmpty userInfo:nil];
         return NO;
+    } else if([email rangeOfString:emailFormat options:NSRegularExpressionSearch|NSCaseInsensitiveSearch].location == NSNotFound){
+        if(error)
+            *error = [[NSError alloc] initWithDomain:SC2PPSignupValidationDomain code:SC2PPSignupValidationEmailIsInvalid userInfo:nil];
+        return NO;
     }
+    
     return YES;
 }
 
