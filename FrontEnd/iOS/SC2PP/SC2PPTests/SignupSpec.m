@@ -129,7 +129,8 @@ describe(@"Signup process", ^{
         it(@"Validates password is not empty", ^{
             NSError *error;
             [signup requestSignupForEmail:validEmail password:emptyString battleNetURL:nonEmptyProfileURL error:&error];
-            [[expectFutureValue(theValue(requestSent)) shouldEventually] beNo];            [[error should] beNonNil];
+            [[expectFutureValue(theValue(requestSent)) shouldEventually] beNo];
+            [[error should] beNonNil];
             [[error.domain should] equal:SC2PPSignupValidationDomain];
             [[theValue(error.code) should] equal:theValue(SC2PPSignupValidationPasswordIsEmpty)];
         });
