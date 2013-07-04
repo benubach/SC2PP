@@ -63,6 +63,10 @@
         if(error)
             *error = [[NSError alloc] initWithDomain:SC2PPSignupValidationDomain code:SC2PPSignupValidationPasswordIsTooShort userInfo:nil];
         return NO;
+    } else if(!profileURL){
+        if(error)
+            *error = [[NSError alloc] initWithDomain:SC2PPSignupValidationDomain code:SC2PPSignupValidationProfileURLIsNull userInfo:nil];
+        return NO;
     }
     
     return YES;
