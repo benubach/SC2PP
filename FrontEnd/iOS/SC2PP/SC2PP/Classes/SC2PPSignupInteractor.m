@@ -19,7 +19,6 @@
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[requestBody dataUsingEncoding:NSUTF8StringEncoding ]];
     AFJSONRequestOperation *jsonOperation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        NSLog(@"Response: %@, JSON: %@", response, JSON);
         NSString *result = [JSON valueForKey:@"result"];
         if([result isEqualToString:@"success"]){
             [self.delegate signupInteractor:self receivedSuccessResponse:[JSON valueForKey:@"message"]];
@@ -27,9 +26,6 @@
             [self.delegate signupInteractor:self receivedErrorMessage:[JSON valueForKey:@"message"]];
         }
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
-        NSLog(@"Response: %@, Error: %@, JSON: %@", response, error, JSON);
-        
-        
     }];
     [jsonOperation start];
 }
