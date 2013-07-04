@@ -11,8 +11,10 @@
 
 @implementation SC2PPSignupInteractor
 
--(void)requestSignupForEmail:(NSString *)email password:(NSString *)password battleNetURL:(NSString *)profileURL error:(NSError *__autoreleasing *)error
+-(BOOL)requestSignupForEmail:(NSString *)email password:(NSString *)password battleNetURL:(NSString *)profileURL error:(NSError *__autoreleasing *)error
 {
+    if(![self validateEmail:email password:password battleNetURL:profileURL error:error])
+        return NO;
     NSString *requestBody = [NSString stringWithFormat:@"{'email':'%@', 'password':'%@', 'profileURL':'%@'}", email, password, profileURL];
     NSURL *url = [NSURL URLWithString:@"http://sc2pp.com/registerUser"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -28,10 +30,19 @@
         }
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSLog(@"Response: %@, Error: %@, JSON: %@", response, error, JSON);
-        
-        
     }];
     [jsonOperation start];
+    return YES;
+}
+
+-(BOOL)validateEmail:(NSString*)email password:(NSString *)password battleNetURL:(NSString *)profileURL error:(NSError *__autoreleasing *)error
+{
+    if(!email){
+        if(error)
+            *error = [[NSError alloc] initWithDomain:SC2PPSignupValidationDomain code:SC2PPSignupValidationEmailIsNull userInfo:nil];
+        return NO;
+    }
+    return YES;
 }
 
 @end

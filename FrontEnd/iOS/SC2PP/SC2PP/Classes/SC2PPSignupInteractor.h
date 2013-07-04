@@ -37,6 +37,6 @@ NS_OPTIONS(NSUInteger, SC2PPSignupValidationError){
 
 @property (nonatomic, weak) id<SC2PPSignupInteractorDelegate>delegate;
 
--(void)requestSignupForEmail:(NSString*)email password:(NSString*)password battleNetURL:(NSString*)profileURL error:(NSError *__autoreleasing *)error;
+-(BOOL)requestSignupForEmail:(NSString*)email password:(NSString*)password battleNetURL:(NSString*)profileURL error:(NSError *__autoreleasing *)error;
 
 @end
