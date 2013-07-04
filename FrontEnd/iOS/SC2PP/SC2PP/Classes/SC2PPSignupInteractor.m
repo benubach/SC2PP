@@ -59,6 +59,10 @@
         if(error)
             *error = [[NSError alloc] initWithDomain:SC2PPSignupValidationDomain code:SC2PPSignupValidationPasswordIsEmpty userInfo:nil];
         return NO;
+    } else if(password.length < 8){
+        if(error)
+            *error = [[NSError alloc] initWithDomain:SC2PPSignupValidationDomain code:SC2PPSignupValidationPasswordIsTooShort userInfo:nil];
+        return NO;
     }
     
     return YES;
