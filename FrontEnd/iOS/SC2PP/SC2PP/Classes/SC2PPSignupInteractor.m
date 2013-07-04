@@ -16,14 +16,20 @@
     NSString *requestBody = [NSString stringWithFormat:@"{'email':'%@', 'password':'%@', 'profileURL':'%@'}", email, password, profileURL];
     NSURL *url = [NSURL URLWithString:@"http://sc2pp.com/registerUser"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    
     [request setHTTPMethod:@"POST"];
-    [request setHTTPBody:[requestBody dataUsingEncoding:NSUTF8StringEncoding ]];
+    [request setHTTPBody:[requestBody dataUsingEncoding:NSUTF8StringEncoding]];
+    
     AFJSONRequestOperation *jsonOperation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSString *result = [JSON valueForKey:@"result"];
         if([result isEqualToString:@"success"]){
+        
             [self.delegate signupInteractor:self receivedSuccessResponse:[JSON valueForKey:@"message"]];
+    
         } else if([result isEqualToString:@"failure"]){
+            
             [self.delegate signupInteractor:self receivedErrorMessage:[JSON valueForKey:@"errorMessage"]];
+        
         }
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
     }];
