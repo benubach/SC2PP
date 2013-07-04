@@ -67,6 +67,10 @@
         if(error)
             *error = [[NSError alloc] initWithDomain:SC2PPSignupValidationDomain code:SC2PPSignupValidationProfileURLIsNull userInfo:nil];
         return NO;
+    } else if(profileURL.length == 0){
+        if(error)
+            *error = [[NSError alloc] initWithDomain:SC2PPSignupValidationDomain code:SC2PPSignupValidationProfileURLIsEmpty userInfo:nil];
+        return NO;
     }
     
     return YES;
