@@ -137,7 +137,7 @@ describe(@"Signup process", ^{
         
         it(@"Validates password has a minimum length", ^{
             NSError *error;
-            [signup requestSignupForEmail:nilString password:invalidPassword battleNetURL:nonEmptyProfileURL error:&error];
+            [signup requestSignupForEmail:validEmail password:invalidPassword battleNetURL:nonEmptyProfileURL error:&error];
             [[expectFutureValue(theValue(requestSent)) shouldEventually] beNo];
             [[error should] beNonNil];
             [[error.domain should] equal:SC2PPSignupValidationDomain];
