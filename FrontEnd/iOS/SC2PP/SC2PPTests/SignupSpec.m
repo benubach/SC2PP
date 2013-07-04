@@ -29,7 +29,7 @@ describe(@"Signup process", ^{
                 NSLog(@"Request: %@", [[NSString alloc] initWithData:request.HTTPBody encoding:NSUTF8StringEncoding]);
                 return [OHHTTPStubsResponse responseWithFile:@"SignupResponseSuccess.json" contentType:@"application/json" responseTime:0];
             }];
-            [signup requestSignupForEmail:@"fake-email@nohosting.next" password:@"jajaja password" battleNetURL:@"http://notarealbnetprofile"];
+            [signup requestSignupForEmail:@"fake-email@nohosting.next" password:@"jajaja password" battleNetURL:@"http://notarealbnetprofile" error:NULL];
             [[expectFutureValue(theValue(requestSent)) shouldEventually] beTrue];
 
         });
@@ -44,7 +44,7 @@ describe(@"Signup process", ^{
             id<SC2PPSignupInteractorDelegate> delegate = [KWMock mockForProtocol:@protocol(SC2PPSignupInteractorDelegate)];
             [signup setDelegate:delegate];
             [[((NSObject*)delegate) shouldEventually] receive:@selector(signupInteractor:receivedSuccessResponse:)];
-            [signup requestSignupForEmail:@"fake-email@nohosting.next" password:@"jajaja password" battleNetURL:@"http://notarealbnetprofile"];
+            [signup requestSignupForEmail:@"fake-email@nohosting.next" password:@"jajaja password" battleNetURL:@"http://notarealbnetprofile" error:NULL];
             
         });
 
@@ -58,10 +58,109 @@ describe(@"Signup process", ^{
             }];
             id<SC2PPSignupInteractorDelegate> delegate = [KWMock mockForProtocol:@protocol(SC2PPSignupInteractorDelegate)];
             [signup setDelegate:delegate];
-            [signup requestSignupForEmail:@"fake-email@nohosting.next" password:@"jajaja password" battleNetURL:@"http://notarealbnetprofile"];
+            [signup requestSignupForEmail:@"fake-email@nohosting.next" password:@"jajaja password" battleNetURL:@"http://notarealbnetprofile" error:NULL];
             [[((NSObject*)delegate) shouldEventually] receive:@selector(signupInteractor:receivedErrorMessage:) withArguments:any(), @"Invalid Battle.net Profile"];
             
         });
+    });
+
+    context(@"Validation", ^{
+        SC2PPSignupInteractor *signup = [[SC2PPSignupInteractor alloc] init];
+        NSString *nilString;
+        NSString *emptyString = @"";
+        NSString *invalidEmail = @"notA@ValidEmail@a.com";
+        NSString *validEmail = @"validEmail@gmail.com";
+        NSString *invalidPassword = @"short";
+        NSString *validPassword = @"[j;c88n0,6x_:3?1";
+        NSString *nonEmptyProfileURL = @"http://us.battle.net/sc2/en/profile/324/1/bnc9nbs/";
+
+        __block BOOL requestSent = NO;
+        beforeAll(^{
+            [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+                NSLog(@"Stubbing request URL %@", request.URL);
+                requestSent = YES;
+                return YES;
+            } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+                return [OHHTTPStubsResponse responseWithFile:@"SignupResponseInvalidBnetProfileURL.json" contentType:@"application/json" responseTime:0];
+            }];
+
+        });
+        
+        afterAll(^{
+            [OHHTTPStubs removeLastRequestHandler];
+        });
+        
+        it(@"Validates e-mail is not nil", ^{
+            NSError *error;
+            [signup requestSignupForEmail:nilString password:validPassword battleNetURL:nonEmptyProfileURL error:&error];
+            [[expectFutureValue(theValue(requestSent)) shouldEventually] beNo];
+            [[error should] beNonNil];
+            [[error.domain should] equal:SC2PPSignupValidationDomain];
+            [[theValue(error.code) should] equal:theValue(SC2PPSignupValidationEmailIsNull)];
+        });
+        
+        it(@"Validates e-mail is not empty", ^{
+            NSError *error;
+            [signup requestSignupForEmail:emptyString password:validPassword battleNetURL:nonEmptyProfileURL error:&error];
+            [[expectFutureValue(theValue(requestSent)) shouldEventually] beNo];
+            [[error should] beNonNil];
+            [[error.domain should] equal:SC2PPSignupValidationDomain];
+            [[theValue(error.code) should] equal:theValue(SC2PPSignupValidationEmailIsEmpty)];
+        });
+        
+        it(@"Validates e-mail has a valid format", ^{
+            NSError *error;
+            [signup requestSignupForEmail:invalidEmail password:validPassword battleNetURL:nonEmptyProfileURL error:&error];
+            [[expectFutureValue(theValue(requestSent)) shouldEventually] beNo];
+            [[error should] beNonNil];
+            [[error.domain should] equal:SC2PPSignupValidationDomain];
+            [[theValue(error.code) should] equal:theValue(SC2PPSignupValidationEmailIsInvalid)];
+        });
+
+        it(@"Validates password is not nil", ^{
+            NSError *error;
+            [signup requestSignupForEmail:validEmail password:nilString battleNetURL:nonEmptyProfileURL error:&error];
+            [[expectFutureValue(theValue(requestSent)) shouldEventually] beNo];
+            [[error should] beNonNil];
+            [[error.domain should] equal:SC2PPSignupValidationDomain];
+            [[theValue(error.code) should] equal:theValue(SC2PPSignupValidationPasswordIsNull)];
+        });
+        
+        it(@"Validates password is not empty", ^{
+            NSError *error;
+            [signup requestSignupForEmail:validEmail password:emptyString battleNetURL:nonEmptyProfileURL error:&error];
+            [[expectFutureValue(theValue(requestSent)) shouldEventually] beNo];            [[error should] beNonNil];
+            [[error.domain should] equal:SC2PPSignupValidationDomain];
+            [[theValue(error.code) should] equal:theValue(SC2PPSignupValidationPasswordIsEmpty)];
+        });
+        
+        it(@"Validates password has a minimum length", ^{
+            NSError *error;
+            [signup requestSignupForEmail:nilString password:invalidPassword battleNetURL:nonEmptyProfileURL error:&error];
+            [[expectFutureValue(theValue(requestSent)) shouldEventually] beNo];
+            [[error should] beNonNil];
+            [[error.domain should] equal:SC2PPSignupValidationDomain];
+            [[theValue(error.code) should] equal:theValue(SC2PPSignupValidationPasswordIsTooShort)];
+        });
+
+        it(@"Validates profileURL is not nil", ^{
+            NSError *error;
+            [signup requestSignupForEmail:validEmail password:validPassword battleNetURL:nilString error:&error];
+            [[expectFutureValue(theValue(requestSent)) shouldEventually] beNo];
+            [[error should] beNonNil];
+            [[error.domain should] equal:SC2PPSignupValidationDomain];
+            [[theValue(error.code) should] equal:theValue(SC2PPSignupValidationProfileURLIsNull)];
+        });
+        
+        it(@"Validates profileURL is not empty", ^{
+            NSError *error;
+            [signup requestSignupForEmail:validEmail password:validPassword battleNetURL:emptyString error:&error];
+            [[expectFutureValue(theValue(requestSent)) shouldEventually] beNo];
+            [[error should] beNonNil];
+            [[error.domain should] equal:SC2PPSignupValidationDomain];
+            [[theValue(error.code) should] equal:theValue(SC2PPSignupValidationProfileURLIsEmpty)];
+        });
+
     });
 });
 SPEC_END

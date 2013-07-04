@@ -11,7 +11,7 @@
 
 @implementation SC2PPSignupInteractor
 
--(void)requestSignupForEmail:(NSString *)email password:(NSString *)password battleNetURL:(NSString *)profileURL
+-(void)requestSignupForEmail:(NSString *)email password:(NSString *)password battleNetURL:(NSString *)profileURL error:(NSError *__autoreleasing *)error
 {
     NSString *requestBody = [NSString stringWithFormat:@"{'email':'%@', 'password':'%@', 'profileURL':'%@'}", email, password, profileURL];
     NSURL *url = [NSURL URLWithString:@"http://sc2pp.com/registerUser"];
