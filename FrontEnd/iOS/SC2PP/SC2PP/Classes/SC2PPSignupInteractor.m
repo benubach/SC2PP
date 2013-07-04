@@ -41,6 +41,10 @@
         if(error)
             *error = [[NSError alloc] initWithDomain:SC2PPSignupValidationDomain code:SC2PPSignupValidationEmailIsNull userInfo:nil];
         return NO;
+    } else if (email.length == 0){
+        if(error)
+            *error = [[NSError alloc] initWithDomain:SC2PPSignupValidationDomain code:SC2PPSignupValidationEmailIsEmpty userInfo:nil];
+        return NO;
     }
     return YES;
 }
